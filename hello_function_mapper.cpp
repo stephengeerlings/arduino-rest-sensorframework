@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 int HelloFunctionMapper::MapFunction(char* url, void* func)
 {
 	HelloFunctionMapping new_mapping = HelloFunctionMapping();

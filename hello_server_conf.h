@@ -8,6 +8,10 @@
 #define WIFI_SSID   "Steefs Happy Place"
 #define WIFI_PASSWD  "5euro-pannenkoek!"
 
+#define SERIAL_HEARTBEAT_INTERVAL   (20)
+
+#define SERVER_UPDATE_DELAY_MILLIS         (200)
+
 
 #define MDNS_DEFAULT_NAME "esp8266"
 

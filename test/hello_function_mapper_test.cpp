@@ -3,9 +3,18 @@
 #include "hello_function_mapping.h"
 #include "hello_function_mapper.h"
 
+#define BUILDING_ON_ARDUINO
+
+#ifndef BUILDING_ON_ARDUINO
+
 #include <string.h>
 #include <stdio.h>
 #include <iostream>
+
+#endif
+
+
+
 
 #define STRING_SUCCESS "[S]\t"
 #define STRING_FAILURE "[F]\t"
