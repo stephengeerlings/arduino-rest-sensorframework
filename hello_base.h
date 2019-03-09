@@ -12,28 +12,30 @@
 
 class HelloBase
 {
-  int m_value;
+
   
-  static HelloBase *this_hellobase_instance;
-  static ESP8266WebServer *this_webserver_instance;
+  
+  
+  
+
   
   HelloBase(int v = 0)
-  {
-    m_value = v;
-  }
+    : m_value(v)
+    , m_active(true)
+  {  }
 
     
 	public:
-		bool main_loop_alive;
+		bool m_active;
 
-    static HelloBase* get_hellobase_instance()
+    static HelloBase* getInstance()
     {
       if (!this_hellobase_instance)
         this_hellobase_instance = new HelloBase;
       return this_hellobase_instance;
     }
     
-    static ESP8266WebServer* get_webserver_instance()
+    static ESP8266WebServer* getWebserver()
     {
         if (!this_webserver_instance)
           this_webserver_instance = new ESP8266WebServer;
@@ -49,7 +51,10 @@ class HelloBase
 		int init();
 		int update_server();
 
-   
+private:
+  static HelloBase* m_instance;
+  static ESP8266WebServer* m_webserver;
+  int m_value; 
         
 
 };
